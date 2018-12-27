@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Some things to peruse</title>
+    <script src="vue.js"></script>
+
+    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">-->
+    <style>
+        @import url("main.css");
+
+    </style>
+</head>
+<body>
+<main id="app">
+    <h2>Web Development Tasks</h2>
+    <article>
+        <task-creator @click="addToTasks"></task-creator>
+        <task-display
+                v-for="task in tasks"
+                :task="task"
+                :key="task.content"
+        ></task-display>
+    </article>
+
+</main>
+
+<script src="main.js"></script>
+
+</body>
+</html>

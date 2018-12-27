@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P|VT323");
+
+body{
+    background: seagreen;
+}
+
+ul p::first-letter{
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    margin: 20px;
+}
+
+a:hover {
+    color: darkgoldenrod;
+    background: linear-gradient(yellowgreen, greenyellow);
+}
+
+main {
+    padding-left: 5%;
+}
+
+h2 {
+    color: blueviolet;
+}
+
+article {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(50px, 1fr));
+    grid-gap: 20px;
+}
+
+p {
+    /*            text-align: justify;
+                text-justify: inter-word;*/
+    color: darkslateblue;
+    font-family: inherit,'Press Start 2P';
+    font-size: 1rem;
+}
+
+p:first-letter {
+    color: firebrick;
+    font-family: VT323,B790-Deco;
+    float: left;
+    font-weight: bold;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+}
+
+#taskCreator {
+    display: grid;
+
+}
