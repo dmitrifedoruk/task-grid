@@ -99,30 +99,39 @@ Vue.component('card-control', {
 );
 
 Vue.component('task-display', {
-    data: function () {
-    },
-    props: ['task'],
-    template: `<p>{{task.content}}</p>`,
-    methods: {}
+    props: ['task','index'],
+    template: `<div class="taskDisplay"><p>{{task.content}}</p>
+                <button class="deleteTask" @click.prevent="removeTask">Remove</button></div>`,
+    methods: {
+        removeTask: function () {
+            this.$emit('click',  {index:this.index});
+        },
+    }
 });
 
 Vue.component('task-creator', {
     data: function () {
+        return {
+            taskContent: '',
+        };
     },
     props: [],
     template: `
                 <div id="taskCreator">
-              <textarea id="textfield" v-model="content"></textarea>
-              <button id="submitTask" @click.prevent="addTask"></button>
+              <textarea id="textfield" v-model="taskContent"></textarea>
+              <button id="submitTask" @click.prevent="addTask">Add</button>
               </div>
     `,
     methods: {
         addTask: function () {
-            this.$emit('click',{content:this.content});
+            this.$emit('click',{taskContent:this.taskContent});
         }
     }
 });
 
+
+
+//work on mobile layout
 
 
 //initialize variable for key value
@@ -134,12 +143,11 @@ const vm = new Vue({
     data: data,
     methods: {
         addToTasks: function (event) {
-            this.tasks.push({content:event.content})
-            console.log(this.tasks[-1])
+            this.tasks.push({content:event.taskContent,index:this.tasks.length})
         },
-/*        removeFromPlayerHand: function (event) {
-            this.handCards.splice(event.index, 1);
-        }*/
+        removeFromTasks: function (event) {
+            this.tasks.splice(event.index, 1);
+        }
     }
 });
 

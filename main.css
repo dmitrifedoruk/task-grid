@@ -46,7 +46,7 @@ p {
 
 p:first-letter {
     color: firebrick;
-    font-family: VT323,B790-Deco;
+    font-family: VT323,B790-Deco,sans-serif;
     float: left;
     font-weight: bold;
     font-size: 75px;
@@ -58,5 +58,30 @@ p:first-letter {
 
 #taskCreator {
     display: grid;
+    grid-template-rows: min-content min-content;
+}
 
+#textfield {
+    min-height: 50px;
+    height: 360px;
+    max-width: 300px;
+    min-width: 300px;
+    background-color: orchid;
+    color: olive;
+    font-family: VT323;
+    font-size: 1.2rem;
+
+}
+
+#submitTask, .deleteTask {
+    height: 2rem;
+    background-color: indigo;
+    color: yellowgreen;
+    font-family: VT323;
+    font-size: 1.2rem;
+    border-color: mediumvioletred;
+}
+
+task-display {
+    display: grid;
 }

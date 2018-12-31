@@ -18,9 +18,11 @@
     <article>
         <task-creator @click="addToTasks"></task-creator>
         <task-display
-                v-for="task in tasks"
+                v-for="(task, index) in tasks"
                 :task="task"
-                :key="task.content"
+                :index="index"
+                :key="index"
+                @click="removeFromTasks"
         ></task-display>
     </article>
 
