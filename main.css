@@ -23,7 +23,7 @@ a:hover {
 }
 
 main {
-    padding-left: 5%;
+    padding-left: 5px;
 }
 
 h2 {
@@ -32,8 +32,18 @@ h2 {
 
 article {
     display: grid;
-    grid-template-columns: repeat(4, minmax(50px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(50px, 310px));
     grid-gap: 20px;
+}
+
+@media (max-width: 480px) {
+    #gridWrapper {
+        display: grid;
+        justify-content: center;
+    }
+    article {
+        justify-content: center;
+    }
 }
 
 p {
@@ -73,13 +83,24 @@ p:first-letter {
 
 }
 
-#submitTask, .deleteTask {
+#submitTask {
+    height: 2rem;
+    width: 307px;
+    background-color: indigo;
+    color: yellowgreen;
+    font-family: VT323;
+    font-size: 1.2rem;
+    border-color: mediumvioletred;
+}
+
+.deleteTask {
     height: 2rem;
     background-color: indigo;
     color: yellowgreen;
     font-family: VT323;
     font-size: 1.2rem;
     border-color: mediumvioletred;
+    margin-top: 20px;
 }
 
 task-display {

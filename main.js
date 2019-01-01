@@ -131,7 +131,8 @@ Vue.component('task-creator', {
 
 
 
-//work on mobile layout
+//work on mobile layout : done
+//add clear button to textfield
 
 
 //initialize variable for key value
