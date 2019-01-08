@@ -120,11 +120,17 @@ Vue.component('task-creator', {
                 <div id="taskCreator">
               <textarea id="textfield" v-model="taskContent"></textarea>
               <button id="submitTask" @click.prevent="addTask">Add</button>
+              <button id="clear" @click.prevent="clearTask">Clear</button>
               </div>
     `,
     methods: {
         addTask: function () {
-            this.$emit('click',{taskContent:this.taskContent});
+            if(this.taskContent != '') {
+                this.$emit('click', {taskContent: this.taskContent});
+            }
+        },
+        clearTask: function () {
+            this.taskContent = '';
         }
     }
 });
